@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const roles = ['Admin', 'Manager', 'Employee'];
+
 
 const Signup = () => {
   const [form, setForm] = useState({
@@ -11,6 +13,7 @@ const Signup = () => {
     confirmPassword: '',
     role: '',
   });
+  const navigate=useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +22,9 @@ const Signup = () => {
 
   const handleSignup = (e) => {
     e.preventDefault();
+    
     console.log(form);
+    navigate('/');
   };
 
   return (

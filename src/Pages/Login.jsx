@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -36,6 +37,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           className="w-full p-2 bg-transparent border border-accent rounded mb-4 text-textPrimary placeholder-textSecondary"
         />
+
         <motion.button
           className="w-full bg-accent text-white p-2 rounded hover:bg-purple-700 transition"
           whileHover={{ scale: 1.05 }}
@@ -43,6 +45,12 @@ const Login = () => {
         >
           Login
         </motion.button>
+
+        <div className='text-center mt-4'>
+          <Link to="/forgot-password" className='text-accent hover:underline'>
+          Forgot Password?
+          </Link>
+        </div>
       </form>
     </motion.div>
   );
